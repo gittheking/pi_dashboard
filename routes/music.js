@@ -1,7 +1,8 @@
-const router             = require('express').Router();
+const router              = require('express').Router();
+const { getCurrentTrack } = require('../services/sonos');
 
-router.get('/',(req,res) => {
-  res.json({});
+router.get('/',getCurrentTrack,(req,res) => {
+  res.json({track: res.track});
 });
 
 module.exports = router;
