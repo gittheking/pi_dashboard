@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+p {
+  display: inline-block;
+  text-align: left;
+}
+#album-art {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
