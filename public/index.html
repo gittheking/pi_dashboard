@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Pi Dashboard</title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/css/normalize.min.css">
+  <link rel="stylesheet" href="/css/main.css">
   <script type="text/javascript" src="/js/main.js" async defer></script>
 </head>
 <body>
   <h1>Sonos</h1>
-  <ul id="track-info">
-    <li id="artist"></li>
-    <li id="track"></li>
-    <li id="album"></li>
-  </ul>
-  <button id="previous"><|<|</button>
-  <button id="play-state">|> / ||</button>
-  <button id="next">|>|></button><br>
+  <div id="track-info">
+    <img id="album-art" src="" alt="Album Art">
+    <p>
+      <span id="artist"></span><br>
+      <span id="track"></span><br>
+      <span id="album"></span><br>
+    </p>
+  </div>
+  <button id="previous">< <</button>
+  <button id="play-state">> / ||</button>
+  <button id="next">> ></button><br>
   <input type="range">
 </body>
 </html>
