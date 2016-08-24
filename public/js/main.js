@@ -7,7 +7,7 @@
   const trackAlbum    = document.querySelector('#album');
   const volumeSlider  = document.querySelector('#volume');
   
-  window.setInterval(() => {
+  function updateTrackInfo() {
     fetch('/music')
     .then(response => response.json())
     .then( result => {
@@ -22,15 +22,17 @@
     .catch( err => {
       console.log('Fetch error: ',err);
     });
-  }, 3000);
+  }
 
-  volumeSlider.addEventListener('change', event => {
-    console.log(event.target.value);
+  function updateVolume(event) {
     fetch(`/music/${event.target.value}`, {
       method: 'PUT'
     })
     .catch(err => {
       console.log('Fetch Error: ', err);
     });
-  })
+  }
+
+  window.setInterval(updateTrackInfo,3000);
+  volumeSlider.addEventListener('change',updateVolume);
 })();
