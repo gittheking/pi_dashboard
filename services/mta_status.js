@@ -7,14 +7,18 @@ function getTrainStatus(req,res,next) {
   .then( data => {
     parseString(data,(err,result) => {
       if(err) throw err;
-      res.trains = result.service.subway[0].line;
+      let trains = result.service.subway[0].line;
+      trains.forEach(train => {
+        train.text[0] = formatStatusText(train.text[0])
+      });
+      res.trains = trains;
       next();
     })
   })
 }
 
 function formatStatusText(statusText) {
-  return statusText.replace(/<(?:.|\n)*?>/gm, '');
+  return statusText.replace(/<(?:.|\n)*?>|&[\w]*;/gm, '');
 };
 
 module.exports = { getTrainStatus };
