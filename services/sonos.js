@@ -22,6 +22,50 @@ function getCurrentVolume(req,res,next) {
   })
 }
 
+function playNext(req,res,next) {
+  sonos.search((device,model) => {
+    if(model !== 'BR100') {
+      device.next((err,nexted) => {
+        if(err) throw err;
+        next();
+      });
+    }
+  });
+}
+
+function play(req,res,next) {
+  sonos.search((device,model) => {
+    if(model !== 'BR100') {
+      device.play((err,playing) => {
+        if(err) throw err;
+        next();
+      });
+    }
+  });
+}
+
+function stop(req,res,next) {
+  sonos.search((device,model) => {
+    if(model !== 'BR100') {
+      device.stop((err,stopped) => {
+        if(err) throw err;
+        next();
+      });
+    }
+  });
+}
+
+function playPrevious(req,res,next) {
+  sonos.search((device,model) => {
+    if(model !== 'BR100') {
+      device.previous((err,previoused) => {
+        if(err) throw err;
+        next();
+      });
+    }
+  });
+}
+
 function updateVolume(req,res,next) {
   sonos.search((device,model) => {
     if( model !== 'BR100') {
@@ -33,4 +77,10 @@ function updateVolume(req,res,next) {
   });
 }
 
-module.exports = { getCurrentTrack, getCurrentVolume, updateVolume }
+module.exports = { getCurrentTrack,
+                   getCurrentVolume,
+                   updateVolume,
+                   playPrevious,
+                   playNext,
+                   play,
+                   stop }
