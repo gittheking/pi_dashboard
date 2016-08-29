@@ -3,8 +3,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-<g id="Layer_1">
-</g>
 <g id="Layer_101">
 </g>
 <g id="Layer_100">
@@ -44,6 +42,10 @@
 <g id="Layer_83">
 </g>
 <g id="Layer_82">
+	<path fill="#FAFAFA" d="M8,2H7v1H6v1H5v1H4v1H2C0.9,6,0,6.9,0,8s0.9,2,2,2h2v1h1v1h1v1h1v1h1v1h2V1H8V2z"/>
+	<rect x="11" y="6" fill="#FAFAFA" width="1" height="4"/>
+	<rect x="13" y="5" fill="#FAFAFA" width="1" height="6"/>
+	<rect x="15" y="4" fill="#FAFAFA" width="1" height="8"/>
 </g>
 <g id="Layer_81">
 </g>
@@ -70,8 +72,6 @@
 <g id="Layer_70">
 </g>
 <g id="Layer_69">
-	<path id="XMLID_2134_" fill="#FAFAFA" d="M14.2,2.6L9,6.5V3c0-0.4-0.5-0.6-0.8-0.4l-6.7,5c-0.3,0.2-0.3,0.6,0,0.8l6.7,5
-		C8.5,13.6,9,13.4,9,13V9.5l5.2,3.9c0.3,0.2,0.8,0,0.8-0.4V3C15,2.6,14.5,2.4,14.2,2.6z"/>
 </g>
 <g id="Layer_68">
 </g>
@@ -206,5 +206,7 @@
 <g id="Layer_3">
 </g>
 <g id="Layer_2">
+</g>
+<g id="Layer_1">
 </g>
 </svg>
