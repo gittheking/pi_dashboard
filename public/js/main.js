@@ -117,13 +117,13 @@
     stop();
     getPlayState(); 
   });
-  
-  // IIFE to keep Current state of SONOS UNIT updated
+
+  // IIFE for current SONOS state and repetetive updates
   (function updateDOM() {
     getTrackInfo();
     getVolume();
     getPlayState();
-    setTimeout(updateDOM,7000);
+    setTimeout(updateDOM,10000);
   })()
 
 })();

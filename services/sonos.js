@@ -97,4 +97,4 @@ module.exports = { getCurrentTrack,
                    playPrevious,
                    playNext,
                    play,
-                   stop }
+                   stop };
