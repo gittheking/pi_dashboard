@@ -18,6 +18,11 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 50px;
+  text-shadow: 0 5px 5px #222;
+}
+
 p {
   margin-left: 20px;
   text-align: left;
@@ -28,6 +33,10 @@ p {
 
 img {
   -webkit-filter: drop-shadow( 0 5px 5px #222);
+}
+
+input {
+  margin-top: 40px;
 }
 
 #album-container {
@@ -51,9 +60,6 @@ img {
   margin-top: 40px;
 }
 
-input {
-  margin-top: 40px;
-}
 
 /*
 The following styling of the input Range was completed with the guidance of 
