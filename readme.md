@@ -42,8 +42,8 @@ using Node.js with the Express.js framework and contains some extra features
 such as adding control to my living room's Sonos system.
 
 ### Technologies Used
-- Express
-- MTA Status report text file
-- Sonos node module
-- Node-Fetch for server side requests
-- Morgan for logging purposes
+- [Express](https://github.com/expressjs/express)
+- [MTA Status report text file](http://web.mta.info/status/serviceStatus.txt)
+- [Sonos node module](https://github.com/bencevans/node-sonos/blob/master/API.md)
+- [Node-Fetch](https://github.com/bitinn/node-fetch) for server side requests
+- [Morgan](https://github.com/expressjs/morgan) for logging purposes
