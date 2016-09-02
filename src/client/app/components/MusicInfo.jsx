@@ -5,17 +5,16 @@ const MusicInfo = props => {
   return (
     <div className="track-info">
       <div className="album-container">
-        <img 
+        <img
+          className="album-art"
           src={props.albumCoverURL}
           alt="Album Cover" />
       </div>
-      <div className="info-container">
-        <p>
-          <span className="artist">{props.artist}</span><br/>
-          <span className="track">{props.track}</span><br/>
-          <span className="album">{props.album}</span><br/>
-        </p>
-      </div>
+      <p>
+        <span className="artist">{props.artist}</span><br/>
+        <span className="track">{props.track}</span><br/>
+        <span className="album">{props.album}</span><br/>
+      </p>
     </div>
   )
 }
