@@ -68,13 +68,13 @@ Daniel Stern's article on CSS-Tricks
 https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ 
 */
 
-input[type=range] {
+.volume {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 70%; /* Specific width is required for Firefox. */
   background: transparent; /* Otherwise white in Chrome */
 }
 
-input[type=range]::-webkit-slider-thumb {
+.volume::-webkit-slider-thumb {
   background: #FAFAFA;
   border-radius: 3px;
   height: 36px;
@@ -84,11 +84,11 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-filter: drop-shadow( 0 5px 5px #222);
 }
 
-input[type=range]:focus {
+.volume:focus {
   outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
-input[type=range]::-ms-track {
+.volume::-ms-track {
   width: 100%;
   cursor: pointer;
 
@@ -98,7 +98,7 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+.volume::-webkit-slider-runnable-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
