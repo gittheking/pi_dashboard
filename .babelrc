@@ -1,0 +1,13 @@
+{
+  presets: [
+    "es2015",
+    "react"
+  ],
+  compact: true,
+  plugins: [
+    [
+      "transform-strict-mode",
+      { strict: true }
+    ]
+  ]
+}
