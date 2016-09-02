@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'ReactJS',
+      title: 'Pi Dashboard',
       xhtml: true,
       inject: false,
       template: require('html-webpack-template'),
@@ -38,24 +38,13 @@ module.exports = {
     include: path.join(__dirname, 'src'),
     loaders: [
       { test: /\.css$/,  loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
-      { test: /\.png$/,  loader: 'file-loader?name=/images/[name].[ext]' },
+      { test: /\.svg$/,  loader: 'file-loader?name=/img/[name].[ext]' },
       { test: /\.gif$/,  loader: 'file-loader' },
       { test: /\.jpg$/,  loader: 'file-loader' },
       { test: /\.jsx?$/, loader: 'babel'       },
       {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=100&mimetype=application/font-woff&name=/fonts/[name].[ext]'
-      },       {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=100&mimetype=application/octet-stream&name=/fonts/[name].[ext]'
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader?name=/fonts/[name].[ext]'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=100&mimetype=image/svg+xml&name=/fonts/[name].[ext]'
       }
     ]
   }
