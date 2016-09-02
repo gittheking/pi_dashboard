@@ -11,15 +11,9 @@ const MusicInfo = props => {
       </div>
       <div className="info-container">
         <p>
-          <span className="artist">
-            {props.artist}
-          </span><br/>
-          <span className="track">
-            {props.track}
-          </span><br/>
-          <span className="album">
-            {props.album}
-          </span><br/>
+          <span className="artist">{props.artist}</span><br/>
+          <span className="track">{props.track}</span><br/>
+          <span className="album">{props.album}</span><br/>
         </p>
       </div>
     </div>
