@@ -2,6 +2,7 @@
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 import MusicInfo        from './components/MusicInfo.jsx';
+import MusicControls    from './components/MusicControls.jsx';
 
 // create a React Component called _App_
 export default class App extends React.Component{
@@ -27,6 +28,7 @@ export default class App extends React.Component{
           track={this.state.track}
           album={this.state.album}
           albumCoverURL={this.state.albumCoverURL} />
+        <MusicControls />
       </div>
     )
   };
