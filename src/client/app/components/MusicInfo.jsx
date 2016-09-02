@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MusicInfo = props => {
-  console.log(props);
   return (
     <div className="track-info">
       <div className="album-container">
