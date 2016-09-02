@@ -39,21 +39,22 @@ input {
   margin-top: 40px;
 }
 
-#album-container {
+.album-container {
   width: 50%;
+  margin-right: 20px;
   text-align: right;
 }
 
-#artist {
+.artist {
   font-size: 30px;
 }
 
-#track, #album {
+.track, .album {
   font-family: atami-light;
   font-size: 25px;
 }
 
-#track-control-buttons img {
+.track-control-buttons img {
   cursor: pointer;
   display: inline-block;
   height: 50px;
@@ -108,33 +109,33 @@ input[type=range]::-webkit-slider-runnable-track {
   -webkit-filter: drop-shadow( 0 5px 5px #222);
 }
 
-#track-control-buttons {
+.track-control-buttons {
   align-items: center;
   display: flex;
   flex-flow: row;
   justify-content: space-around;
 }
 
-#volume-control {
+.volume-control {
   align-items: center;
   display: flex;
   flex-flow: row;
   justify-content: center;
 }
 
-#volume-icon {
+.volume-icon {
   height: 50px;
   margin: 40px 20px 0 0;
 }
 
-#track-info {
+.track-info {
   align-items: center;
   display: flex;
   flex-flow: row;
   justify-content: center;
 }
 
-#album-art {
+.album-art {
   box-shadow: -10px 10px 10px #222;
   height: 300px;
   margin-right: 20px;
