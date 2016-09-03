@@ -30,14 +30,15 @@ export default class MusicControls extends React.Component {
 
   setVolume(volume) {
     console.log('Volume set at: ',volume);
-    // fetch(`/music/volume/${volume}`, {
-    //   method: 'PUT'
-    // })
-    // .catch(err => console.log('Fetch Error: ', err));
+    fetch(`/music/volume/${volume}`, {
+      method: 'PUT'
+    })
+    .then(response => console.log('Response: ',response))
+    .catch(err => console.log('Fetch Error: ', err));
   }
 
   playState() {
-    if(this.state.playState === 'paused' || this.state.playState === 'paused') {
+    if(this.state.playState === 'paused' || this.state.playState === 'stopped') {
       return <img src="/img/play.svg" className="play" />
     } else {
       return <img src="/img/stop.svg" className="stop" />
