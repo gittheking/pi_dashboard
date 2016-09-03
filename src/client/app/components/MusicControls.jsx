@@ -37,9 +37,20 @@ export default class MusicControls extends React.Component {
     .catch(err => console.log('Fetch Error: ', err));
   }
 
+  play() {
+    fetch('/music/play')
+    .then(response => response.json())
+    .then(result => console.log(result));
+  }
+
   playState() {
     if(this.state.playState === 'paused' || this.state.playState === 'stopped') {
-      return <img src="/img/play.svg" className="play" />
+      return (
+        <img 
+          src="/img/play.svg"
+          className="play"
+          onClick={this.play} />
+      )
     } else {
       return <img src="/img/stop.svg" className="stop" />
     }
