@@ -43,6 +43,12 @@ export default class MusicControls extends React.Component {
     .then(result => console.log(result));
   }
 
+  stop() {
+    fetch('/music/stop')
+    .then(response => response.json())
+    .then(result => console.log(result));
+  }
+
   playState() {
     if(this.state.playState === 'paused' || this.state.playState === 'stopped') {
       return (
@@ -52,7 +58,12 @@ export default class MusicControls extends React.Component {
           onClick={this.play} />
       )
     } else {
-      return <img src="/img/stop.svg" className="stop" />
+      return (
+        <img
+          src="/img/stop.svg"
+          className="stop"
+          onClick={this.stop} />
+      )
     }
   }
 
