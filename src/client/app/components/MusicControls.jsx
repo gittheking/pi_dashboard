@@ -61,6 +61,12 @@ export default class MusicControls extends React.Component {
     .catch(err => console.log('Fetch error: ',err));
   }
 
+  playPrevious() {
+    fetch('/music/previous')
+    .then(response => response.json())
+    .catch(err => console.log('Fetch error: ',err));
+  }
+
   playState() {
     if(this.state.playState === 'paused' || this.state.playState === 'stopped') {
       return (
@@ -83,7 +89,10 @@ export default class MusicControls extends React.Component {
     return (
       <div className="track-controls">
         <div className="track-control-buttons">
-          <img src="/img/previous.svg" className="previous"/>
+          <img
+            className="previous"
+            src="/img/previous.svg"
+            onClick={this.playPrevious.bind(this)} />
           {this.playState()}
           <img src="/img/next.svg" className="next" />
         </div>
