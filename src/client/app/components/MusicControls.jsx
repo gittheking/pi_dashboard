@@ -40,13 +40,25 @@ export default class MusicControls extends React.Component {
   play() {
     fetch('/music/play')
     .then(response => response.json())
-    .then(result => console.log(result));
+    .then(result => {
+      this.setState({playState: 'playing'});
+    })
+    .catch(err => console.log('Fetch Error: ', err));
   }
 
   stop() {
     fetch('/music/stop')
     .then(response => response.json())
-    .then(result => console.log(result));
+    .then(result => {
+      this.setState({playState: 'stopped'});
+    })
+    .catch(err => console.log('Fetch Error: ', err));
+  }
+
+  playNext() {
+    fetch('/music/next')
+    .then(response => response.json())
+    .catch(err => console.log('Fetch error: ',err));
   }
 
   playState() {
@@ -55,14 +67,14 @@ export default class MusicControls extends React.Component {
         <img 
           src="/img/play.svg"
           className="play"
-          onClick={this.play} />
+          onClick={this.play.bind(this)} />
       )
     } else {
       return (
         <img
           src="/img/stop.svg"
           className="stop"
-          onClick={this.stop} />
+          onClick={this.stop.bind(this)} />
       )
     }
   }
@@ -76,7 +88,10 @@ export default class MusicControls extends React.Component {
           <img src="/img/next.svg" className="next" />
         </div>
         <div className="volume-control">
-          <img src="/img/volume.svg" className="volume-icon" />
+          <img
+            className="volume-icon"
+            src="/img/volume.svg"
+            onClick={this.playNext.bind(this)} />
           <input
             className="volume"
             type="range"
