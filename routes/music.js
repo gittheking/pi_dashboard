@@ -34,7 +34,7 @@ router.get('/state', sonos.getState, (req,res) => {
 })
 
 router.put('/volume/:value', sonos.updateVolume, (req,res) => {
-  console.log(req.params);
+  console.log('Error: ',res.error);
 });
 
 module.exports = router;
