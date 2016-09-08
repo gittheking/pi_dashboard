@@ -1,7 +1,7 @@
-const router             = require('express').Router();
-const { getTrainStatus } = require('../services/mta_status');
+const router = require('express').Router();
+const mta    = require('../services/mta_status');
 
-router.get('/',getTrainStatus,(req,res) => {
+router.get('/',mta.getTrainStatus,(req,res) => {
   res.json({status: res.trains});
 });
 
