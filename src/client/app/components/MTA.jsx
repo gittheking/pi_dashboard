@@ -1,5 +1,6 @@
 import React from 'react';
 import MTACurrentLine from './MTACurrentLine.jsx';
+import MTALineList from './MTALineList.jsx';
 
 export default class MTA extends React.Component {
 
@@ -18,21 +19,10 @@ export default class MTA extends React.Component {
     fetch('/train')
     .then(response => response.json())
     .then((result) => {
+      console.log('train response',result);
       const trains = [];
       result.status.forEach(train => trains.push(train.name[0]));
       this.setState({ trains });
-    });
-  }
-
-  displayTrains() {
-    return this.state.trains.map((line) => {
-      return (
-        <li key={line}>
-          <div className="subway-list-item">
-            {line}
-          </div>
-        </li>
-      );
     });
   }
 
@@ -40,13 +30,10 @@ export default class MTA extends React.Component {
     return (
       <div>
         <h1>Trains</h1>
-        <h2>Current Line</h2>
-        <MTACurrentLine 
+        <MTACurrentLine
         currentLine={this.state.currentLine} />
-        <h3>All Lines</h3>
-        <ul className="subway-list">
-          {this.displayTrains()}
-        </ul>
+        <MTALineList
+        trains={this.state.trains}/>
       </div>
     );
   }
