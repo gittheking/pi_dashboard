@@ -1,21 +1,29 @@
 import React from 'react';
+import styles from './MusicInfo_style.js';
 
 const MusicInfo = props => {
   return (
-    <div className="track-info">
-      <div className="album-container">
+    <div style={styles.trackInfo}>
+      <div style={styles.albumContainer}>
         <img
-          className="album-art"
+          style={styles.albumArt}
           src={props.albumCoverURL}
-          alt="Album Cover" />
+          alt="Album Cover"
+        />
       </div>
-      <p>
-        <span className="artist">{props.artist}</span><br/>
-        <span className="track">{props.track}</span><br/>
-        <span className="album">{props.album}</span><br/>
+      <p style={styles.p}>
+        <span style={styles.artist}>
+          {props.artist}
+        </span><br/>
+        <span style={styles.trackAndAlbum}>
+          {props.track}
+        </span><br/>
+        <span style={styles.trackAndAlbum}>
+          {props.album}
+        </span><br/>
       </p>
     </div>
-  )
-}
+  );
+};
 
 export default MusicInfo;
