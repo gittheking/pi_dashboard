@@ -1,12 +1,11 @@
 import React from 'react';
+import styles from './MTALineListItem_style.js';
 
 const MTALineListItem = (props) => {
   return (
-    <li>
-      <div className="subway-list-item">
-        {props.line}
-      </div>
-    </li>
+    <div>
+      <h2 style={styles.h2}>{props.line}</h2>
+    </div>
   );
 };
 
