@@ -18,50 +18,6 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 50px;
-  text-shadow: 0 5px 5px #222;
-}
-
-p {
-  margin-left: 20px;
-  text-align: left;
-  text-shadow: 5px 5px 5px #222;
-  transform: perspective(1000px) rotateY(-20deg);
-  width: 50%;
-}
-
-img {
-  -webkit-filter: drop-shadow( 0 5px 5px #222);
-}
-
-input {
-  margin-top: 40px;
-}
-
-.album-container {
-  width: 50%;
-  margin-right: 20px;
-  text-align: right;
-}
-
-.artist {
-  font-size: 30px;
-}
-
-.track, .album {
-  font-family: atami-light;
-  font-size: 25px;
-}
-
-.track-control-buttons img {
-  cursor: pointer;
-  display: inline-block;
-  height: 50px;
-  margin-top: 40px;
-}
-
-
 /*
 The following styling of the input Range was completed with the guidance of 
 Daniel Stern's article on CSS-Tricks
@@ -91,7 +47,6 @@ https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
 .volume::-ms-track {
   width: 100%;
   cursor: pointer;
-
   /* Hides the slider so custom styles can be added */
   background: transparent; 
   border-color: transparent;
@@ -107,38 +62,4 @@ https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
   border-radius: 1.3px;
   border: 0.2px solid #010101;
   -webkit-filter: drop-shadow( 0 5px 5px #222);
-}
-
-.track-control-buttons {
-  align-items: center;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-}
-
-.volume-control {
-  align-items: center;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-}
-
-.volume-icon {
-  height: 50px;
-  margin: 40px 20px 0 0;
-}
-
-.track-info {
-  align-items: center;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-}
-
-.album-art {
-  box-shadow: -10px 10px 10px #222;
-  height: 300px;
-  margin-right: 20px;
-  transform: perspective(1000px) rotateY(20deg);
-  width: 300px;
 }
