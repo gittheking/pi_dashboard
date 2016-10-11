@@ -26,7 +26,11 @@ export default class MTA extends React.Component {
       let currentLineStatus = '';
       let currentLineText = '';
       result.status.forEach((train) => {
-        trains.push(train.name[0]);
+        trains.push({
+          name: train.name[0],
+          status: train.status[0],
+          text: train.text[0],
+        });
         if (train.name[0] === this.state.currentLine) {
           currentLineStatus = train.status[0];
           currentLineText = train.text[0];
@@ -37,6 +41,17 @@ export default class MTA extends React.Component {
         currentLineStatus,
         currentLineText,
       });
+    });
+  }
+
+  onTrainSelect(selectedTrain) {
+    const currentTrain = this.state.trains.filter((train) => {
+      return train.name === selectedTrain;
+    });
+    this.setState({
+      currentLine: selectedTrain,
+      currentLineStatus: currentTrain[0].status,
+      currentLineText: currentTrain[0].text,
     });
   }
 
@@ -51,6 +66,7 @@ export default class MTA extends React.Component {
             currentLineText={this.state.currentLineText}
           />
           <MTALineList
+            onTrainSelect={this.onTrainSelect.bind(this)}
             trains={this.state.trains}
           />
         </div>
