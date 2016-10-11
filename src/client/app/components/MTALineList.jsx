@@ -7,7 +7,8 @@ const MTALineList = (props) => {
     return (
       <MTALineListItem
         key={i}
-        line={line}
+        line={line.name}
+        onTrainSelect={props.onTrainSelect}
       />
     );
   });
@@ -20,7 +21,7 @@ const MTALineList = (props) => {
 };
 
 MTALineList.propTypes = {
-  trains: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+  trains: React.PropTypes.array.isRequired,
 };
 
 export default MTALineList;
