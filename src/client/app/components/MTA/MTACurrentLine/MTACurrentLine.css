@@ -1,0 +1,72 @@
+.mtaCurrentLineContainer {
+  width: 66%;
+  padding-left: 40px;
+}
+
+.itemContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 5px 0;
+  padding: 10px 0;
+}
+
+.subwayLine {
+  border-radius: 50%;
+  box-shadow: 0 3px 3px #222;
+  color: #FAFAFA;
+  font-size: 35px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 5px;
+  text-shadow: 0 1px 1px #222;
+  width: 50px;
+}
+
+.currentStatusText {
+  text-align: left;
+}
+
+.lineACE {
+  background-color: #0039A6;
+}
+
+.lineBDFM {
+  background-color: #FF6319;
+}
+
+.lineG {
+  background-color: #6CBE45;
+}
+
+.lineJZ {
+  background-color: #996633;
+}
+
+.lineL {
+  background-color: #A7A9AC;
+}
+
+.lineNQR {
+  background-color: #FCCC0A;
+}
+
+.line123 {
+  background-color: #EE352E;
+}
+
+.line456 {
+  background-color: #00933C;
+}
+
+.line7 {
+  background-color: #B933AD;
+}
+
+.lineS {
+  background-color: #808183;
+}
+
+.lineSIR {
+  background-color: #21308E;
+}
