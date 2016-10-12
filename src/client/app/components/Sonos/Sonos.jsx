@@ -1,7 +1,7 @@
 import React            from 'react';
-import MusicInfo        from './MusicInfo.jsx';
-import MusicControls    from './MusicControls.jsx';
-import styles           from './Sonos_style.js';
+import MusicInfo        from './MusicInfo/MusicInfo.jsx';
+import MusicControls    from './MusicControls/MusicControls.jsx';
+import styles           from './Sonos.css';
 
 export default class Sonos extends React.Component {
 
@@ -30,13 +30,13 @@ export default class Sonos extends React.Component {
         volume: '50',
       });
     })
-    .catch(err => console.log('Fetch error: ',err));
+    .catch(err => console.log('Fetch error: ', err));
   }
 
   render() {
     return (
       <div>
-        <h1 style={styles.h1}>SONOS</h1>
+        <h1 className={styles.heading}>SONOS</h1>
         <MusicInfo
           artist={this.state.artist}
           track={this.state.track}

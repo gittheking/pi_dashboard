@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './MusicControls_style.js';
+import styles from './MusicControls.css';
 
 export default class MusicControls extends React.Component {
 
@@ -74,7 +74,7 @@ export default class MusicControls extends React.Component {
         <img
           src="/img/play.svg"
           alt="Play"
-          style={styles.controlButtons}
+          className={styles.button}
           onClick={this.play.bind(this)}
         />
       );
@@ -83,7 +83,7 @@ export default class MusicControls extends React.Component {
         <img
           src="/img/stop.svg"
           alt="Stop"
-          style={styles.controlButtons}
+          className={styles.button}
           onClick={this.stop.bind(this)}
         />
       );
@@ -93,32 +93,32 @@ export default class MusicControls extends React.Component {
   render() {
     return (
       <div>
-        <div style={styles.controlButtonsContainer}>
+        <div className={styles.buttonContainer}>
           <img
             src="/img/previous.svg"
             alt="Previous"
-            style={styles.controlButtons}
+            className={styles.button}
             onClick={this.playPrevious.bind(this)}
           />
           {this.playState()}
           <img
             src="/img/next.svg"
             alt="Next"
-            style={styles.controlButtons}
+            className={styles.button}
             onClick={this.playNext.bind(this)}
           />
         </div>
-        <div style={styles.volumeControlContainer}>
+        <div className={styles.volumeControlContainer}>
           <img
             src="/img/volume.svg"
             alt="Volume"
-            style={styles.volumeIcon}
+            className={styles.volumeIcon}
           />
           <input
-            className="volume"
-            style={styles.input}
+            className={styles.volume}
             type="range"
             value={this.state.volume}
+            style={{ marginTop: '40px' }}
             onChange={event => this.setState({ volume: event.target.value })}
             onMouseUp={event => this.setVolume(event.target.value)}
           />

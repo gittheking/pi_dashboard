@@ -1,6 +1,6 @@
 import React from 'react';
-import MTALineListItem from './MTALineListItem.jsx';
-import styles from './MTALineList_style.js';
+import MTALineListItem from '../MTALineListItem/MTALineListItem.jsx';
+import styles from './MTALineList.css';
 
 const MTALineList = (props) => {
   const trainList = props.trains.map((line, i) => {
@@ -14,7 +14,7 @@ const MTALineList = (props) => {
   });
 
   return (
-    <div style={styles.div}>
+    <div className={styles.lineListContainer}>
       {trainList}
     </div>
   );

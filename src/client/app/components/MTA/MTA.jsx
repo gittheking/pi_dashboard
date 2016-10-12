@@ -1,7 +1,7 @@
 import React from 'react';
-import MTACurrentLine from './MTACurrentLine.jsx';
-import MTALineList from './MTALineList.jsx';
-import styles from './MTA_style.js';
+import MTACurrentLine from './MTACurrentLine/MTACurrentLine.jsx';
+import MTALineList from './MTALineList/MTALineList.jsx';
+import styles from './MTA.css';
 
 export default class MTA extends React.Component {
 
@@ -58,8 +58,8 @@ export default class MTA extends React.Component {
   render() {
     return (
       <div>
-        <h1 style={styles.h1}>Subway</h1>
-        <div style={styles.mtaStatusContainer}>
+        <h1 className={styles.heading}>Subway</h1>
+        <div className={styles.mtaStatusContainer}>
           <MTACurrentLine
             currentLine={this.state.currentLine}
             currentLineStatus={this.state.currentLineStatus}

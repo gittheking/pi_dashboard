@@ -1,0 +1,36 @@
+.songInfo {
+  margin-left: 20px;
+  text-align: left;
+  transform: perspective(1000px) rotateY(-20deg);
+  width: 50%;
+}
+
+.trackInfo {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.albumContainer {
+  width: 50%;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.albumArt {
+  box-shadow: -10px 10px 10px #222;
+  height: 300px;
+  margin-right: 20px;
+  transform: perspective(1000px) rotateY(20deg);
+  width: 300px;
+}
+
+.artist {
+  font-size: 40px;
+}
+
+.trackAndAlbum {
+  font-family: 'atami-light';
+  font-size: 35px;
+}

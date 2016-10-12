@@ -1,23 +1,22 @@
 import React from 'react';
-import styles from './MTACurrentLine_style.js';
+import styles from './MTACurrentLine.css';
 
 const MTACurrentLine = (props) => {
   const subwayLines = props.currentLine.split('').map((line, i) => {
-    styles.subwayLine.backgroundColor = styles[`line${props.currentLine}`].backgroundColor;
     return (
-      <div style={styles.subwayLine} key={i}>
+      <div className={`${styles.subwayLine} ${styles['line' + props.currentLine]}`} key={i}>
         {line}
       </div>
     );
   });
 
   return (
-    <div style={styles.div}>
-      <div style={styles.itemContainer}>
+    <div className={styles.mtaCurrentLineContainer}>
+      <div className={styles.itemContainer}>
         {subwayLines}
       </div>
       <h3>{ props.currentLineStatus }</h3>
-      <p style={styles.p}>{ props.currentLineText }</p>
+      <p className={styles.currentStatusText}>{ props.currentLineText }</p>
     </div>
   );
 };
