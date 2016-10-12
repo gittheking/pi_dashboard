@@ -24,6 +24,12 @@
   margin: 40px 20px 0 0;
 }
 
+/*
+The following styling of the input Range was completed with the guidance of 
+Daniel Stern's article on CSS-Tricks
+https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ 
+*/
+
 .volume {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 70%; /* Specific width is required for Firefox. */
