@@ -1,22 +1,20 @@
-import React from 'react';
+import React  from 'react';
 import styles from './MTACurrentLine.css';
 
 const MTACurrentLine = (props) => {
-  const subwayLines = props.currentLine.split('').map((line, i) => {
-    return (
-      <div className={`${styles.subwayLine} ${styles['line' + props.currentLine]}`} key={i}>
-        {line}
-      </div>
-    );
-  });
+  const subwayLines = props.currentLine.split('').map((line, i) =>
+    <div className={`${styles['subway-line']} ${styles['line-' + props.currentLine]}`} key={i}>
+      {line}
+    </div>
+  );
 
   return (
-    <div className={styles.mtaCurrentLineContainer}>
-      <div className={styles.itemContainer}>
+    <div className={styles['mta-current-line-container']}>
+      <div className={styles['item-container']}>
         {subwayLines}
       </div>
-      <h3>{ props.currentLineStatus }</h3>
-      <p className={styles.currentStatusText}>{ props.currentLineText }</p>
+      <h3 className={styles['current-status']}>{ props.currentLineStatus }</h3>
+      <p className={styles['current-status-text']}>{ props.currentLineText }</p>
     </div>
   );
 };
