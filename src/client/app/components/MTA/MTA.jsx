@@ -1,7 +1,7 @@
-import React from 'react';
+import React          from 'react';
 import MTACurrentLine from './MTACurrentLine/MTACurrentLine.jsx';
-import MTALineList from './MTALineList/MTALineList.jsx';
-import styles from './MTA.css';
+import MTALineList    from './MTALineList/MTALineList.jsx';
+import styles         from './MTA.css';
 
 export default class MTA extends React.Component {
 
@@ -16,6 +16,18 @@ export default class MTA extends React.Component {
     };
 
     this.getTrains();
+  }
+
+
+  onTrainSelect(selectedTrain) {
+    const currentTrain = this.state.trains.filter((train) => {
+      return train.name === selectedTrain;
+    });
+    this.setState({
+      currentLine: selectedTrain,
+      currentLineStatus: currentTrain[0].status,
+      currentLineText: currentTrain[0].text,
+    });
   }
 
   getTrains() {
@@ -44,22 +56,11 @@ export default class MTA extends React.Component {
     });
   }
 
-  onTrainSelect(selectedTrain) {
-    const currentTrain = this.state.trains.filter((train) => {
-      return train.name === selectedTrain;
-    });
-    this.setState({
-      currentLine: selectedTrain,
-      currentLineStatus: currentTrain[0].status,
-      currentLineText: currentTrain[0].text,
-    });
-  }
-
   render() {
     return (
       <div>
         <h1 className={styles.heading}>Subway</h1>
-        <div className={styles.mtaStatusContainer}>
+        <div className={styles['mta-status-container']}>
           <MTACurrentLine
             currentLine={this.state.currentLine}
             currentLineStatus={this.state.currentLineStatus}
