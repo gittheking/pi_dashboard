@@ -1,24 +1,24 @@
-.songInfo {
+.song-info {
   margin-left: 20px;
   text-align: left;
   transform: perspective(1000px) rotateY(-20deg);
   width: 50%;
 }
 
-.trackInfo {
+.track-info {
   align-items: center;
   display: flex;
   flex-flow: row;
   justify-content: center;
 }
 
-.albumContainer {
+.album-container {
   width: 50%;
   margin-right: 20px;
   text-align: right;
 }
 
-.albumArt {
+.album-art {
   box-shadow: -10px 10px 10px #222;
   height: 300px;
   margin-right: 20px;
@@ -30,7 +30,7 @@
   font-size: 40px;
 }
 
-.trackAndAlbum {
+.track-and-album {
   font-family: 'atami-light';
   font-size: 35px;
 }
