@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import styles from './MusicControls.css';
 
 export default class MusicControls extends React.Component {
@@ -26,11 +26,10 @@ export default class MusicControls extends React.Component {
     fetch('/music/volume')
     .then(response => response.json())
     .then(result => this.setState({ volume: result.volume }))
-    .catch(err => console.log('Fetch error: ',err));
+    .catch(err => console.log('Fetch error: ', err));
   }
 
   setVolume(volume) {
-    console.log('Volume set at: ',volume);
     fetch(`/music/volume/${volume}`, {
       method: 'PUT',
     })
@@ -93,7 +92,7 @@ export default class MusicControls extends React.Component {
   render() {
     return (
       <div>
-        <div className={styles.buttonContainer}>
+        <div className={styles['button-container']}>
           <img
             src="/img/previous.svg"
             alt="Previous"
@@ -108,11 +107,11 @@ export default class MusicControls extends React.Component {
             onClick={this.playNext.bind(this)}
           />
         </div>
-        <div className={styles.volumeControlContainer}>
+        <div className={styles['volume-control-container']}>
           <img
             src="/img/volume.svg"
             alt="Volume"
-            className={styles.volumeIcon}
+            className={styles['volume-icon']}
           />
           <input
             className={styles.volume}

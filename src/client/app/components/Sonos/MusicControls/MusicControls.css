@@ -1,4 +1,4 @@
-.buttonContainer {
+.button-container {
   align-items: center;
   display: flex;
   flex-flow: row;
@@ -12,14 +12,14 @@
   margin-top: 40px;
 }
 
-.volumeControlContainer {
+.volume-control-container {
   align-items: center;
   display: flex;
   flex-flow: row;
   justify-content: center;
 }
 
-.volumeIcon {
+.volume-icon {
   height: 50px;
   margin: 40px 20px 0 0;
 }
