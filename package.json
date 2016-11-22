@@ -26,10 +26,11 @@
     "morgan": "^1.7.0",
     "node-fetch": "^1.6.0",
     "path": "^0.12.7",
-    "sonos": "^0.12.0",
-    "xml2js": "^0.4.17",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "react-router": "^2.8.1",
+    "sonos": "^0.12.0",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "babel": "^6.5.2",
