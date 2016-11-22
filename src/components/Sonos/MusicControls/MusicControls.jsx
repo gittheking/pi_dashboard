@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, { Component } from 'react';
 import styles from './MusicControls.css';
 import playButton from '../../../img/play.svg';
 import stopButton from '../../../img/stop.svg';
@@ -6,7 +6,7 @@ import nextButton from '../../../img/next.svg';
 import prevButton from '../../../img/previous.svg';
 import volumeIcon from '../../../img/volume.svg';
 
-export default class MusicControls extends React.Component {
+export default class MusicControls extends Component {
 
   constructor() {
     super();
