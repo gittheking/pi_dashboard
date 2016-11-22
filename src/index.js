@@ -6,12 +6,6 @@ import MTA from './components/MTA/MTA.jsx';
 import Sonos from './components/Sonos/Sonos.jsx';
 import './css/normalize.min.css';
 import './css/main.css';
-import './img/mute.svg';
-import './img/next.svg';
-import './img/play.svg';
-import './img/previous.svg';
-import './img/stop.svg';
-import './img/volume.svg';
 
 // mount our App at #container
 ReactDOM.render((

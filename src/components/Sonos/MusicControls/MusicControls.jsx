@@ -1,5 +1,10 @@
 import React  from 'react';
 import styles from './MusicControls.css';
+import playButton from '../../../img/play.svg';
+import stopButton from '../../../img/stop.svg';
+import nextButton from '../../../img/next.svg';
+import prevButton from '../../../img/previous.svg';
+import volumeIcon from '../../../img/volume.svg';
 
 export default class MusicControls extends React.Component {
 
@@ -71,7 +76,7 @@ export default class MusicControls extends React.Component {
     if (this.state.playState === 'paused' || this.state.playState === 'stopped') {
       return (
         <img
-          src="/img/play.svg"
+          src={playButton}
           alt="Play"
           className={styles.button}
           onClick={this.play.bind(this)}
@@ -80,7 +85,7 @@ export default class MusicControls extends React.Component {
     } else {
       return (
         <img
-          src="/img/stop.svg"
+          src={stopButton}
           alt="Stop"
           className={styles.button}
           onClick={this.stop.bind(this)}
@@ -94,14 +99,14 @@ export default class MusicControls extends React.Component {
       <div>
         <div className={styles['button-container']}>
           <img
-            src="/img/previous.svg"
+            src={prevButton}
             alt="Previous"
             className={styles.button}
             onClick={this.playPrevious.bind(this)}
           />
           {this.playState()}
           <img
-            src="/img/next.svg"
+            src={nextButton}
             alt="Next"
             className={styles.button}
             onClick={this.playNext.bind(this)}
@@ -109,7 +114,7 @@ export default class MusicControls extends React.Component {
         </div>
         <div className={styles['volume-control-container']}>
           <img
-            src="/img/volume.svg"
+            src={volumeIcon}
             alt="Volume"
             className={styles['volume-icon']}
           />
