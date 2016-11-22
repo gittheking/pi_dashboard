@@ -15,16 +15,11 @@ export default class MusicControls extends React.Component {
       playState: 'playing',
       volume: '50',
     };
-
-    this.getVolume();
-    this.getPlayState();
   }
 
-  getPlayState() {
-    fetch('/music/state')
-    .then(response => response.json())
-    .then(result => this.setState({ playState: result.state }))
-    .catch(err => console.log('Fetch Error: ', err));
+  componentWillMount() {
+    this.getVolume();
+    this.getPlayState();
   }
 
   getVolume() {
@@ -32,6 +27,13 @@ export default class MusicControls extends React.Component {
     .then(response => response.json())
     .then(result => this.setState({ volume: result.volume }))
     .catch(err => console.log('Fetch error: ', err));
+  }
+
+  getPlayState() {
+    fetch('/music/state')
+    .then(response => response.json())
+    .then(result => this.setState({ playState: result.state }))
+    .catch(err => console.log('Fetch Error: ', err));
   }
 
   setVolume(volume) {
@@ -45,7 +47,7 @@ export default class MusicControls extends React.Component {
   play() {
     fetch('/music/play')
     .then(response => response.json())
-    .then((result) => {
+    .then(() => {
       this.setState({ playState: 'playing' });
     })
     .catch(err => console.log('Fetch Error: ', err));
@@ -54,7 +56,7 @@ export default class MusicControls extends React.Component {
   stop() {
     fetch('/music/stop')
     .then(response => response.json())
-    .then((result) => {
+    .then(() => {
       this.setState({ playState: 'stopped' });
     })
     .catch(err => console.log('Fetch Error: ', err));
@@ -79,7 +81,7 @@ export default class MusicControls extends React.Component {
           src={playButton}
           alt="Play"
           className={styles.button}
-          onClick={this.play.bind(this)}
+          onClick={this.play}
         />
       );
     } else {
@@ -88,7 +90,7 @@ export default class MusicControls extends React.Component {
           src={stopButton}
           alt="Stop"
           className={styles.button}
-          onClick={this.stop.bind(this)}
+          onClick={this.stop}
         />
       );
     }
@@ -102,14 +104,14 @@ export default class MusicControls extends React.Component {
             src={prevButton}
             alt="Previous"
             className={styles.button}
-            onClick={this.playPrevious.bind(this)}
+            onClick={this.playPrevious}
           />
           {this.playState()}
           <img
             src={nextButton}
             alt="Next"
             className={styles.button}
-            onClick={this.playNext.bind(this)}
+            onClick={this.playNext}
           />
         </div>
         <div className={styles['volume-control-container']}>
