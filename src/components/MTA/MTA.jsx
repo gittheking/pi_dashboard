@@ -59,7 +59,6 @@ export default class MTA extends React.Component {
   render() {
     return (
       <div>
-        <h1 className={styles.heading}>Subway</h1>
         <div className={styles['mta-status-container']}>
           <MTACurrentLine
             currentLine={this.state.currentLine}
