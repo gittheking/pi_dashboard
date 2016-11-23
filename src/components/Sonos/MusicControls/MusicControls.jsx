@@ -32,7 +32,9 @@ export default class MusicControls extends Component {
   getPlayState() {
     fetch('/music/state')
     .then(response => response.json())
-    .then(result => this.setState({ playState: result.state }))
+    .then((result) => {
+      this.setState({ playState: result.state });
+    })
     .catch(err => console.log('Fetch Error: ', err));
   }
 
@@ -81,7 +83,7 @@ export default class MusicControls extends Component {
           src={playButton}
           alt="Play"
           className={styles.button}
-          onClick={this.play}
+          onClick={() => this.play()}
         />
       );
     } else {
@@ -90,7 +92,7 @@ export default class MusicControls extends Component {
           src={stopButton}
           alt="Stop"
           className={styles.button}
-          onClick={this.stop}
+          onClick={() => this.stop()}
         />
       );
     }
@@ -104,14 +106,14 @@ export default class MusicControls extends Component {
             src={prevButton}
             alt="Previous"
             className={styles.button}
-            onClick={this.playPrevious}
+            onClick={() => this.playPrevious()}
           />
           {this.playState()}
           <img
             src={nextButton}
             alt="Next"
             className={styles.button}
-            onClick={this.playNext}
+            onClick={() => this.playNext()}
           />
         </div>
         <div className={styles['volume-control-container']}>
