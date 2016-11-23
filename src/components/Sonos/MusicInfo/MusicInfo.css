@@ -19,11 +19,11 @@
 }
 
 .album-art {
-  box-shadow: -10px 10px 10px #222;
-  height: 300px;
+  box-shadow: 0 5px 10px #222;
+  height: 275px;
   margin-right: 20px;
   transform: perspective(1000px) rotateY(20deg);
-  width: 300px;
+  width: 275px;
 }
 
 .artist {

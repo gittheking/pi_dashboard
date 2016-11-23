@@ -9,7 +9,7 @@ const MTACurrentLine = (props) => {
   );
 
   return (
-    <div className={styles['mta-current-line-container']}>
+    <div id={styles['mta-current-line-container']}>
       <div className={styles['item-container']}>
         {subwayLines}
       </div>

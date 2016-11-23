@@ -14,7 +14,9 @@ export default class Sonos extends React.Component {
       album: 'Album',
       albumCoverURL: '',
     };
+  }
 
+  componentDidMount() {
     this.getTrackInfo();
   }
 
@@ -36,7 +38,6 @@ export default class Sonos extends React.Component {
   render() {
     return (
       <div>
-        <h1 className={styles.heading}>SONOS</h1>
         <MusicInfo
           artist={this.state.artist}
           track={this.state.track}
