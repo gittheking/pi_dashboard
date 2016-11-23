@@ -14,7 +14,9 @@ export default class Sonos extends React.Component {
       album: 'Album',
       albumCoverURL: '',
     };
+  }
 
+  componentDidMount() {
     this.getTrackInfo();
   }
 

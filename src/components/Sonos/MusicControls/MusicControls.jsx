@@ -17,7 +17,7 @@ export default class MusicControls extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getVolume();
     this.getPlayState();
   }
