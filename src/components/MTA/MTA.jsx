@@ -15,6 +15,9 @@ export default class MTA extends React.Component {
       currentLineText: '',
     };
 
+  }
+
+  componentWillMount() {
     this.getTrains();
   }
 
