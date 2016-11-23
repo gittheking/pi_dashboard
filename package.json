@@ -23,6 +23,7 @@
   "homepage": "https://github.com/gittheking/pi_dashboard#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "moment": "^2.17.0",
     "morgan": "^1.7.0",
     "node-fetch": "^1.6.0",
     "path": "^0.12.7",
