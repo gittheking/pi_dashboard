@@ -1,19 +1,19 @@
 const router = require('express').Router();
 const sonos = require('../services/sonos');
 
-function sendInfo(req, res) {
+const sendInfo = (req, res) => {
   res.json({ trackInfo: res.trackInfo });
-}
+};
 
-function sendState(req, res) {
+const sendState = (req, res) => {
   let result;
   if (res.error) {
     result = res.error;
   } else {
-    result = 'success';
+    result = res.state;
   }
   res.json({ response: result });
-}
+};
 
 router.get('/track', sonos.getCurrentTrack, sendInfo);
 
