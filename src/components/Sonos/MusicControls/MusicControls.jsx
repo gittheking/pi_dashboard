@@ -14,12 +14,20 @@ export default class MusicControls extends Component {
     this.state = {
       playState: 'playing',
       volume: '50',
+      volumeTimer: undefined,
+      playStateTimer: undefined,
     };
   }
 
-  componentDidMount() {
-    setInterval(this.getVolume.bind(this), 5000);
-    setInterval(this.getPlayState.bind(this), 5000);
+  componentWillMount() {
+    const volumeTimer    = setInterval(this.getVolume.bind(this),    5000);
+    const playStateTimer = setInterval(this.getPlayState.bind(this), 5000);
+    this.setState({ volumeTimer, playStateTimer });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.volumeTimer);
+    clearInterval(this.state.playStateTimer);
   }
 
   getVolume() {
@@ -32,9 +40,7 @@ export default class MusicControls extends Component {
   getPlayState() {
     fetch('/music/state')
     .then(response => response.json())
-    .then((result) => {
-      this.setState({ playState: result.state });
-    })
+    .then((result) => this.setState({ playState: result.state }))
     .catch(err => console.log('Fetch Error: ', err));
   }
 
@@ -42,37 +48,29 @@ export default class MusicControls extends Component {
     fetch(`/music/volume/${volume}`, {
       method: 'PUT',
     })
-    .then(response => console.log('Response: ', response))
+    .then(() => this.setState({ volume }))
     .catch(err => console.log('Fetch Error: ', err));
   }
 
   play() {
     fetch('/music/play')
-    .then(response => response.json())
-    .then(() => {
-      this.setState({ playState: 'playing' });
-    })
+    .then(() => this.setState({ playState: 'playing' }))
     .catch(err => console.log('Fetch Error: ', err));
   }
 
   stop() {
     fetch('/music/stop')
-    .then(response => response.json())
-    .then(() => {
-      this.setState({ playState: 'stopped' });
-    })
+    .then(() => this.setState({ playState: 'stopped' }))
     .catch(err => console.log('Fetch Error: ', err));
   }
 
   playNext() {
     fetch('/music/next')
-    .then(response => response.json())
     .catch(err => console.log('Fetch error: ', err));
   }
 
   playPrevious() {
     fetch('/music/previous')
-    .then(response => response.json())
     .catch(err => console.log('Fetch error: ', err));
   }
 
