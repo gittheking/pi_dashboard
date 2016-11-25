@@ -1,6 +1,7 @@
 const sonos = require('sonos');
 
-const SONOS_HOST = process.env.SONOS_HOST || '192.168.1.159';
+// const SONOS_HOST = process.env.SONOS_HOST || '192.168.1.159';
+const SONOS_HOST = process.env.KING_HOST || '192.168.88.30';
 const SONOS_PORT = process.env.SONOS_PORT || 1400;
 
 function getCurrentTrack(req, res, next) {
