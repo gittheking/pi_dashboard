@@ -13,13 +13,19 @@ export default class Sonos extends React.Component {
       track: 'Track',
       album: 'Album',
       albumCoverURL: '',
+      trackInfoInterval: undefined,
     };
   }
 
-  componentDidMount() {
-    setInterval(() => {
+  componentWillMount() {
+    const trackInfoInterval = setInterval(() => {
       this.getTrackInfo();
     }, 5000);
+    this.setState({ trackInfoInterval });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.trackInfoInterval);
   }
 
   getTrackInfo() {
