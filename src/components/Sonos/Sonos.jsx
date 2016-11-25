@@ -17,7 +17,9 @@ export default class Sonos extends React.Component {
   }
 
   componentDidMount() {
-    this.getTrackInfo();
+    setInterval(() => {
+      this.getTrackInfo();
+    }, 5000);
   }
 
   getTrackInfo() {
