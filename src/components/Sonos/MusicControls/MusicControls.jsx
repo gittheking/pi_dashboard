@@ -18,8 +18,8 @@ export default class MusicControls extends Component {
   }
 
   componentDidMount() {
-    this.getVolume();
-    this.getPlayState();
+    setInterval(this.getVolume.bind(this), 5000);
+    setInterval(this.getPlayState.bind(this), 5000);
   }
 
   getVolume() {
