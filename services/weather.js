@@ -1,4 +1,5 @@
 const fetch               = require('node-fetch');
+const icons               = require('../utils/weather-icons');
 const { getNextFiveDays } = require('../utils/date-format');
 
 const API_KEY = process.env.WEATHER_API_KEY;
@@ -34,22 +35,34 @@ function filterForecast(forecast) {
 
   const nextDays = getNextFiveDays();
 
-  results.forEach((day) => {
+  return results.map((day) => {
     let date = day.date.split('-');
     date.shift();
     date = date.join('/');
-    day.date = date;
-    day.day = nextDays.shift();
+    return {
+      date,
+      day: nextDays.shift(),
+      min: Math.round(day.min),
+      max: Math.round(day.max),
+    };
   });
+}
 
-  return results;
+function filterCurrent(currentWeather) {
+  return {
+    conditionIcon: icons[currentWeather.weather[0].main],
+    conditionDescription: currentWeather.weather[0].description,
+    temp: Math.round(currentWeather.main.temp),
+    tempMin: Math.round(currentWeather.main.temp_min),
+    tempMax: Math.round(currentWeather.main.temp_max),
+  };
 }
 
 function getCurrentWeather(req, res, next) {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=New+York,NY&units=imperial&APPID=${API_KEY}`)
   .then(r => r.json())
   .then((data) => {
-    res.currentWeather = data;
+    res.currentWeather = filterCurrent(data);
     next();
   })
   .catch(err => console.log(err));
