@@ -4,5 +4,6 @@ module.exports = {
   Storm: '⛈',
   Snow: '🌨',
   Mist: '🌫',
+  Haze: '🌫',
   Clouds: '☁',
 };
