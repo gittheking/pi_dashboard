@@ -24,7 +24,7 @@ const NavBar = props => {
           <img id={style['music-logo']} src={musicLogo} alt=""/>
         </div>
       </Link>
-      <Link to={'/'} onClick={event => props.handleAppToggle}>
+      <Link to={'/weather'} onClick={event => props.handleAppToggle}>
         <div id="weather-nav" className={style['nav-logos']}>
           <img id={style['weather-logo']} src={weatherLogo} alt=""/>
         </div>
