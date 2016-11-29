@@ -45,5 +45,7 @@ such as adding control to my living room's Sonos system.
 - [Express](https://github.com/expressjs/express)
 - [MTA Status report text file](http://web.mta.info/status/serviceStatus.txt)
 - [Sonos node module](https://github.com/bencevans/node-sonos/blob/master/API.md)
-- [Node-Fetch](https://github.com/bitinn/node-fetch) for server side requests
-- [Morgan](https://github.com/expressjs/morgan) for logging purposes
+- [MomentJS](http://momentjs.com/)
+- [Open Weather Map API](https://openweathermap.org/)
+- [Node-Fetch](https://github.com/bitinn/node-fetch)
+- [Morgan](https://github.com/expressjs/morgan)
