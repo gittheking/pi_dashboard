@@ -9,7 +9,6 @@ class Weather extends Component {
 
     this.state = {
       current: {
-        conditionIcon: '🌫',
         conditionDescription: 'mist',
         temp: 0,
         tempMin: 0,
@@ -19,7 +18,7 @@ class Weather extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getCurrentWeather();
     this.getWeatherForecast();
   }
