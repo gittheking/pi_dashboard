@@ -12,8 +12,17 @@ body {
   background: #FAFAFA;
   background-size: cover;
   color: #232323;
+  cursor: none;
   font-family: atami;
   height: 100%;
   width: 100%;
   text-align: center;
+}
+
+a {
+  cursor: none;
+}
+
+a:hover {
+  cursor: none;
 }

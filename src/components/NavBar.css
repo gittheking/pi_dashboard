@@ -2,28 +2,30 @@
   border: 1px solid #232323;
   border-top: none;
   box-shadow: 0 1px 3px #222;
-  margin: 0 20px;
   padding: 10px 30px;
 }
 
 #app-nav {
+  cursor: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 0 100px 20px 100px;
+  position: absolute;
+  left: 0;
 }
 
 #clock-logo {
-  height: 100px;
+  height: 95px;
 }
 
 #mta-logo {
-  height: 100px;
+  height: 95px;
 }
 
 #music-logo {
-  height: 100px;
+  height: 95px;
 }
 
 #weather-logo {
-  height: 100px;
+  height: 95px;
 }

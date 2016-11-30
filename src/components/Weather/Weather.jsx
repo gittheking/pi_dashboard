@@ -40,7 +40,7 @@ class Weather extends Component {
 
   render() {
     return (
-      <div id="weather-container">
+      <div id={style['weather-container']}>
         <CurrentWeather weather={this.state.current} />
         <ForecastList forecast={this.state.forecast} />
       </div>

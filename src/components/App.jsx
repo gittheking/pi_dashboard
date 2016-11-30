@@ -13,15 +13,38 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      activeApp: 'clock'
+      activeApp: 'clock',
+      time: '00:00 AM',
+      timeInterval: undefined
     };
+  }
+
+  componentWillMount(){
+    const timeInterval = setInterval(() => {
+      this.setState({time: moment().format('LT')});
+    }, 15000);
+    this.setState({ timeInterval });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.timeInterval);
   }
 
   handleAppRender() {
     if (this.props.children) {
-      return this.props.children;
+      return (
+        <div id={style['app-container']}>
+          {this.props.children}
+        </div>
+      );
     } else {
-      return moment().format('LT');
+      return (
+        <div id={style['app-container']}>
+          <div id={style['clock']}>  
+            {this.state.time}
+          </div>
+        </div>
+      )
     }
   }
 
@@ -34,7 +57,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id={style['app']}>
         <NavBar />
         {this.handleAppRender()}
       </div>
