@@ -1,10 +1,8 @@
 #mta-current-line-container {
-  border: 1px solid #232323;
-  box-shadow: 0 1px 3px #222;
-  height: 450px;
+  height: 480px;
   overflow-y: auto;
   padding: 0 40px;
-  width: 50%;
+  width: 63%;
 }
 
 .item-container {
