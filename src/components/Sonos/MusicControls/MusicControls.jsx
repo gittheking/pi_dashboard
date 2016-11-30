@@ -19,8 +19,8 @@ export default class MusicControls extends Component {
     };
   }
 
-  componentWillMount() {
-    const volumeTimer    = setInterval(this.getVolume.bind(this),    5000);
+  componentDidMount() {
+    const volumeTimer    = setInterval(this.getVolume.bind(this),    15000);
     const playStateTimer = setInterval(this.getPlayState.bind(this), 5000);
     this.setState({ volumeTimer, playStateTimer });
   }
@@ -45,6 +45,7 @@ export default class MusicControls extends Component {
   }
 
   setVolume(volume) {
+    console.log(`set at ${volume}`);
     fetch(`/music/volume/${volume}`, {
       method: 'PUT',
     })
