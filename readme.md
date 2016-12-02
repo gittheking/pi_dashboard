@@ -49,3 +49,5 @@ such as adding control to my living room's Sonos system.
 - [Open Weather Map API](https://openweathermap.org/)
 - [Node-Fetch](https://github.com/bitinn/node-fetch)
 - [Morgan](https://github.com/expressjs/morgan)
+- [Webpack](http://webpack.github.io/)
+  * Current webpack config adapted from [this](https://github.com/gittheking/PERN_template) repo
