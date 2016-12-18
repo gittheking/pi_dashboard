@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
 import moment from 'moment';
 import MTA from './MTA/MTA.jsx';
 import Sonos from './Sonos/Sonos.jsx';
 import Weather from './Weather/Weather.jsx';
 import NavBar from './NavBar.jsx';
 import style from './App.css';
+import musicNotes from '../img/music-notes.svg';
 
 export default class App extends Component {
 
@@ -15,6 +15,11 @@ export default class App extends Component {
       activeApp: 'clock',
       time: moment().format('LT'),
       timeInterval: undefined,
+      artist: 'Artist',
+      title: 'Track',
+      album: 'Album',
+      albumArtURL: musicNotes,
+      volume: '50',
     };
   }
 
@@ -30,16 +35,43 @@ export default class App extends Component {
     clearInterval(this.state.timeInterval);
   }
 
+  getTrackInfo() {
+    fetch('/music/track')
+    .then(response => response.json())
+    .then((result) => {
+      if (result.trackInfo) {
+        const trackInfo = {};
+        Object.keys(result.trackInfo).forEach((key) => {
+          trackInfo[key] = result.trackInfo[key];
+        });
+        this.setState(trackInfo);
+      }
+    })
+    .catch(err => console.log('Fetch error: ', err));
+  }
+
   handleAppRender() {
     switch(this.state.activeApp) {
       case 'mta': return <MTA />;
-      case 'music': return <Sonos />;
+      case 'music':
+        return (
+          <Sonos
+            artist={this.state.artist}
+            title={this.state.title}
+            album={this.state.album}
+            albumArtURL={this.state.albumArtURL}
+            volume={this.state.volume}
+            getTrackInfo={this.getTrackInfo.bind(this)}
+          />
+        );
       case 'weather': return <Weather />;
-      case 'clock': return (
-                      <div id={style.clock}>  
-                        {this.state.time}
-                      </div>
-                    );
+      case 'clock':
+        return (
+          <div id={style.clock}>
+            {this.state.time}
+          </div>
+        );
+      default: return <div>No app selected</div>;
     }
   }
 
