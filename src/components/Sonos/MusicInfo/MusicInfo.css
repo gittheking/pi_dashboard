@@ -14,23 +14,24 @@
 
 .album-container {
   width: 50%;
-  margin-right: 20px;
+  margin: 20px 20px 0 0;
   text-align: right;
 }
 
 .album-art {
+  background-color: #232323;
   box-shadow: 0 5px 10px #222;
-  height: 275px;
+  height: 225px;
   margin-right: 20px;
   transform: perspective(1000px) rotateY(20deg);
-  width: 275px;
+  width: 225px;
 }
 
 .artist {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .track-and-album {
   font-family: 'atami-light';
-  font-size: 35px;
+  font-size: 25px;
 }

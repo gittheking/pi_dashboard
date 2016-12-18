@@ -19,8 +19,8 @@ export default class MusicControls extends Component {
     };
   }
 
-  componentWillMount() {
-    const volumeTimer    = setInterval(this.getVolume.bind(this),    5000);
+  componentDidMount() {
+    const volumeTimer    = setInterval(this.getVolume.bind(this),    15000);
     const playStateTimer = setInterval(this.getPlayState.bind(this), 5000);
     this.setState({ volumeTimer, playStateTimer });
   }
@@ -33,14 +33,18 @@ export default class MusicControls extends Component {
   getVolume() {
     fetch('/music/volume')
     .then(response => response.json())
-    .then(result => this.setState({ volume: result.volume }))
+    .then((result) => {
+      if (this.state.volume !== result.volume) this.setState({ volume: result.volume });
+    })
     .catch(err => console.log('Fetch error: ', err));
   }
 
   getPlayState() {
     fetch('/music/state')
     .then(response => response.json())
-    .then((result) => this.setState({ playState: result.state }))
+    .then((result) => {
+      if (this.state.playState !== result.state) this.setState({ playState: result.state });
+    })
     .catch(err => console.log('Fetch Error: ', err));
   }
 
@@ -77,21 +81,23 @@ export default class MusicControls extends Component {
   playState() {
     if (this.state.playState === 'paused' || this.state.playState === 'stopped') {
       return (
-        <img
-          src={playButton}
-          alt="Play"
-          className={styles.button}
-          onClick={() => this.play()}
-        />
+        <div onClick={() => this.play()}>
+          <img
+            src={playButton}
+            alt="Play"
+            className={styles.button}
+          />
+        </div>
       );
     } else {
       return (
-        <img
-          src={stopButton}
-          alt="Stop"
-          className={styles.button}
-          onClick={() => this.stop()}
-        />
+        <div onClick={() => this.stop()}>
+          <img
+            src={stopButton}
+            alt="Stop"
+            className={styles.button}
+          />
+        </div>
       );
     }
   }
@@ -100,19 +106,21 @@ export default class MusicControls extends Component {
     return (
       <div>
         <div className={styles['button-container']}>
-          <img
-            src={prevButton}
-            alt="Previous"
-            className={styles.button}
-            onClick={() => this.playPrevious()}
-          />
+          <div onClick={() => this.playPrevious()}>
+            <img
+              src={prevButton}
+              alt="Previous"
+              className={styles.button}
+            />
+          </div>
           {this.playState()}
-          <img
-            src={nextButton}
-            alt="Next"
-            className={styles.button}
-            onClick={() => this.playNext()}
-          />
+          <div onClick={() => this.playNext()}>
+            <img
+              src={nextButton}
+              alt="Next"
+              className={styles.button}
+            />
+          </div>
         </div>
         <div className={styles['volume-control-container']}>
           <img

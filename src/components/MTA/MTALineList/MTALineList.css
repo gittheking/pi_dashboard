@@ -1,7 +1,6 @@
 .line-list-container {
-  border: 1px solid #232323;
-  box-shadow: 0 1px 3px #222;
-  height: 450px;
+  border-left: 1px solid #232323;
+  height: 480px;
   overflow-y: auto;
-  width: 25%;
+  width: 35%;
 }

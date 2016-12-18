@@ -9,7 +9,6 @@ class Weather extends Component {
 
     this.state = {
       current: {
-        conditionIcon: '🌫',
         conditionDescription: 'mist',
         temp: 0,
         tempMin: 0,
@@ -19,7 +18,7 @@ class Weather extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getCurrentWeather();
     this.getWeatherForecast();
   }
@@ -40,7 +39,7 @@ class Weather extends Component {
 
   render() {
     return (
-      <div id="weather-container">
+      <div id={style['weather-container']}>
         <CurrentWeather weather={this.state.current} />
         <ForecastList forecast={this.state.forecast} />
       </div>

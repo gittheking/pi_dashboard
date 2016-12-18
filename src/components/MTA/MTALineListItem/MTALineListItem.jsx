@@ -12,15 +12,12 @@ const MTALineListItem = (props) => {
   );
 
   return (
-    <div>
       <div
         className={styles['item-container']}
         onClick={() => props.onTrainSelect(props.line)}
       >
         {subwayLines}
       </div>
-      <hr />
-    </div>
   );
 };
 

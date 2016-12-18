@@ -2,12 +2,12 @@
   "name": "pi_dashboard",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
     "heroku-prebuild": "scripts/deployment_react.sh",
     "heroku-postbuild": "scripts/deployment_cleanup.sh",
-    "start": "node server.js",
+    "start": "node index.js",
     "rebuild": "webpack -d --progress --colors",
     "watch": "webpack -d --progress --watch"
   },
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/gittheking/pi_dashboard#readme",
   "dependencies": {
     "dotenv": "^2.0.0",
+    "electron": "^1.4.10",
     "express": "^4.14.0",
     "moment": "^2.17.0",
     "morgan": "^1.7.0",
@@ -30,8 +31,8 @@
     "path": "^0.12.7",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "react-router": "^2.8.1",
     "sonos": "^0.12.0",
+    "url": "^0.11.0",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {

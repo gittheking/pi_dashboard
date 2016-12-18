@@ -4,23 +4,24 @@ hr {
 }
 
 .item-container {
+  border-bottom: 1px solid #222;
   display: flex;
   flex-flow: row;
   justify-content: center;
-  margin: 5px 0;
-  padding: 10px 0;
+  margin: 0;
+  padding: 15px 0;
 }
 
 .subway-line {
   border-radius: 50%;
   box-shadow: 0 3px 3px #222;
   color: #FAFAFA;
-  font-size: 35px;
-  height: 50px;
-  line-height: 50px;
+  font-size: 30px;
+  height: 40px;
+  line-height: 40px;
   margin: 0 5px;
   text-shadow: 0 1px 1px #222;
-  width: 50px;
+  width: 40px;
 }
 
 .line-ACE {
