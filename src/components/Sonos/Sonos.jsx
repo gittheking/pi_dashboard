@@ -2,24 +2,21 @@ import React            from 'react';
 import MusicInfo        from './MusicInfo/MusicInfo.jsx';
 import MusicControls    from './MusicControls/MusicControls.jsx';
 import styles           from './Sonos.css';
+import musicNotes       from '../../img/music-notes.svg';
 
 export default class Sonos extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      artist: 'Artist',
-      track: 'Track',
-      album: 'Album',
-      albumCoverURL: '',
       trackInfoInterval: undefined,
     };
   }
 
   componentDidMount() {
     const trackInfoInterval = setInterval(() => {
-      this.getTrackInfo();
+      this.props.getTrackInfo();
     }, 5000);
     this.setState({ trackInfoInterval });
   }
@@ -28,35 +25,25 @@ export default class Sonos extends React.Component {
     clearInterval(this.state.trackInfoInterval);
   }
 
-  getTrackInfo() {
-    fetch('/music/track')
-    .then(response => response.json())
-    .then((result) => {
-      this.setState({
-        artist: result.trackInfo.artist,
-        track: result.trackInfo.title,
-        album: result.trackInfo.album,
-        albumCoverURL: result.trackInfo.albumArtURL,
-        volume: '50',
-      });
-    })
-    .catch(err => console.log('Fetch error: ', err));
-  }
-
   render() {
     return (
       <div>
         <MusicInfo
-          artist={this.state.artist}
-          track={this.state.track}
-          album={this.state.album}
-          albumCoverURL={this.state.albumCoverURL}
+          artist={this.props.artist}
+          title={this.props.title}
+          album={this.props.album}
+          albumArtURL={this.props.albumArtURL}
         />
-        <MusicControls
-          playState={this.state.playState}
-          volume={this.state.volume}
-        />
+        <MusicControls />
       </div>
     );
   }
 }
+
+Sonos.propTypes = {
+  artist: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
+  album: React.PropTypes.string.isRequired,
+  albumArtURL: React.PropTypes.string.isRequired,
+  getTrackInfo: React.PropTypes.func.isRequired,
+};

@@ -19,6 +19,7 @@
 }
 
 .album-art {
+  background-color: #232323;
   box-shadow: 0 5px 10px #222;
   height: 225px;
   margin-right: 20px;

@@ -6,7 +6,7 @@ const MusicInfo = props =>
     <div className={styles['album-container']}>
       <img
         className={styles['album-art']}
-        src={props.albumCoverURL}
+        src={props.albumArtURL}
         alt="Album Cover"
       />
     </div>
@@ -15,7 +15,7 @@ const MusicInfo = props =>
         {props.artist}
       </span><br />
       <span className={styles['track-and-album']}>
-        {props.track}
+        {props.title}
       </span><br />
       <span className={styles['track-and-album']}>
         {props.album}
@@ -24,9 +24,9 @@ const MusicInfo = props =>
   </div>;
 
 MusicInfo.propTypes = {
-  albumCoverURL: React.PropTypes.string.isRequired,
+  albumArtURL: React.PropTypes.string.isRequired,
   artist: React.PropTypes.string.isRequired,
-  track: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
   album: React.PropTypes.string.isRequired,
 };
 
