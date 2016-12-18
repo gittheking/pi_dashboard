@@ -4,11 +4,12 @@ hr {
 }
 
 .item-container {
+  border-bottom: 1px solid #222;
   display: flex;
   flex-flow: row;
   justify-content: center;
-  margin: 5px 0;
-  padding: 10px 0;
+  margin: 0;
+  padding: 15px 0;
 }
 
 .subway-line {
