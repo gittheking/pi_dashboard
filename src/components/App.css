@@ -41,3 +41,7 @@
 #weather-logo {
   height: 100px;
 }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
