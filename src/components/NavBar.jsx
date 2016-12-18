@@ -1,10 +1,9 @@
-import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
-import mtaLogo from '../img/MTA_NYC_logo.svg';
-import clockLogo from '../img/clock-logo.svg';
-import musicLogo from '../img/music-logo.svg';
+import React       from 'react';
+import mtaLogo     from '../img/MTA_NYC_logo.svg';
+import clockLogo   from '../img/clock-logo.svg';
+import musicLogo   from '../img/music-logo.svg';
 import weatherLogo from '../img/weather-logo.svg';
-import style from './NavBar.css';
+import style       from './NavBar.css';
 
 const NavBar = props => {
   return (
